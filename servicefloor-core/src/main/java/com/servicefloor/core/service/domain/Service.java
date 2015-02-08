@@ -3,10 +3,10 @@ package com.servicefloor.core.service.domain;
 import java.math.BigDecimal;
 
 public class Service {
-	private String serviceId;
-	private String serviceName;
-	private ServicePrice servicePrice;
-	private String serviceSubCategoryId;
+	String serviceId;
+	String serviceName;
+	ServicePrice servicePrice;
+	String serviceSubCategoryId;
 
 	private Service() {
 

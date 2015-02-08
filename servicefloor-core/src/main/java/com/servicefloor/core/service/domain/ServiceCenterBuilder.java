@@ -31,7 +31,8 @@ public class ServiceCenterBuilder {
 
 	public ServiceCenterBuilder serviceCenterLocation(String address,
 			String landline, String mobile) {
-		this.serviceCenterLocation(address, landline, mobile);
+		this.serviceCenterLocation = ServiceCenterLocation.Create(address,
+				landline, mobile);
 		return this;
 	}
 
