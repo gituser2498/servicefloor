@@ -5,6 +5,8 @@ import java.math.BigDecimal;
 public class ServiceDto {
 	private String serviceId;
 	private String serviceName;
+	private String serviceCenterId;
+
 	private BigDecimal originalPrice;
 	private BigDecimal discountedPrice;
 
@@ -14,6 +16,14 @@ public class ServiceDto {
 
 	public void setServiceId(String serviceId) {
 		this.serviceId = serviceId;
+	}
+
+	public String getServiceCenterId() {
+		return serviceCenterId;
+	}
+
+	public void setServiceCenterId(String serviceCenterId) {
+		this.serviceCenterId = serviceCenterId;
 	}
 
 	public String getServiceName() {
@@ -49,4 +59,14 @@ public class ServiceDto {
 	}
 
 	private String serviceSubCategoryId;
+
+	@Override
+	public String toString() {
+		return "ServiceDto [serviceId=" + serviceId + ", serviceName="
+				+ serviceName + ", serviceCenterId=" + serviceCenterId
+				+ ", originalPrice=" + originalPrice + ", discountedPrice="
+				+ discountedPrice + ", serviceSubCategoryId="
+				+ serviceSubCategoryId + "]";
+	}
+
 }

@@ -6,6 +6,7 @@ public class ServiceCenterDto {
 	private String serviceCenterId;
 	private String serviceCenterName;
 	private String sellerId;
+	private String categoryId;
 
 	private String address;
 	private String landline;
@@ -15,7 +16,7 @@ public class ServiceCenterDto {
 	private String thumbnailPic;
 
 	private List<ServiceDto> services;
-	private List<ServiceSubCategoryDto> serviceSubCategories;
+	private List<ServiceCenterRateCardCategoryDto> serviceCenterRateCardCatDtoList;
 
 	public String getServiceCenterId() {
 		return serviceCenterId;
@@ -39,6 +40,14 @@ public class ServiceCenterDto {
 
 	public void setSellerId(String sellerId) {
 		this.sellerId = sellerId;
+	}
+
+	public String getCategoryId() {
+		return categoryId;
+	}
+
+	public void setCategoryId(String categoryId) {
+		this.categoryId = categoryId;
 	}
 
 	public String getAddress() {
@@ -81,6 +90,15 @@ public class ServiceCenterDto {
 		this.thumbnailPic = thumbnailPic;
 	}
 
+	public List<ServiceCenterRateCardCategoryDto> getServiceCenterRateCardCatDtoList() {
+		return serviceCenterRateCardCatDtoList;
+	}
+
+	public void setServiceCenterRateCardCatDtoList(
+			List<ServiceCenterRateCardCategoryDto> serviceCenterRateCardCatDtoList) {
+		this.serviceCenterRateCardCatDtoList = serviceCenterRateCardCatDtoList;
+	}
+
 	public List<ServiceDto> getServices() {
 		return services;
 	}
@@ -89,13 +107,15 @@ public class ServiceCenterDto {
 		this.services = services;
 	}
 
-	public List<ServiceSubCategoryDto> getServiceSubCategories() {
-		return serviceSubCategories;
+	@Override
+	public String toString() {
+		return "ServiceCenterDto [serviceCenterId=" + serviceCenterId
+				+ ", serviceCenterName=" + serviceCenterName + ", sellerId="
+				+ sellerId + ", categoryId=" + categoryId + ", address="
+				+ address + ", landline=" + landline + ", mobile=" + mobile
+				+ ", mainPic=" + mainPic + ", thumbnailPic=" + thumbnailPic
+				+ ", services=" + services
+				+ ", serviceCenterRateCardCatDtoList="
+				+ serviceCenterRateCardCatDtoList + "]";
 	}
-
-	public void setServiceSubCategories(
-			List<ServiceSubCategoryDto> serviceSubCategories) {
-		this.serviceSubCategories = serviceSubCategories;
-	}
-
 }

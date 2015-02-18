@@ -3,17 +3,17 @@ package com.servicefloor.core.service.domain;
 import java.math.BigDecimal;
 
 public class Service {
-	String serviceId;
-	String serviceName;
-	ServicePrice servicePrice;
-	String serviceSubCategoryId;
+	private String serviceId;
+	private String serviceName;
+	private ServicePrice servicePrice;
+	private String serviceCenterRateCardCategoryId;
 
 	private Service() {
 
 	}
 
 	static Service create(String serviceId, String serviceName,
-			String serviceSubCategoryId, BigDecimal originalPrice,
+			String serviceCenterRateCardCategoryId, BigDecimal originalPrice,
 			BigDecimal discountedPrice) {
 		Service service = new Service();
 		ServicePrice servicePrice = ServicePrice.create(originalPrice,
@@ -21,7 +21,23 @@ public class Service {
 		service.serviceId = serviceId;
 		service.serviceName = serviceName;
 		service.servicePrice = servicePrice;
-		service.serviceSubCategoryId = serviceSubCategoryId;
+		service.serviceCenterRateCardCategoryId = serviceCenterRateCardCategoryId;
 		return service;
+	}
+
+	public String getServiceId() {
+		return serviceId;
+	}
+
+	public String getServiceName() {
+		return serviceName;
+	}
+
+	public ServicePrice getServicePrice() {
+		return servicePrice;
+	}
+
+	public String getServiceCenterRateCardCategoryId() {
+		return serviceCenterRateCardCategoryId;
 	}
 }

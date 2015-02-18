@@ -1,9 +1,9 @@
 package com.servicefloor.core.service.domain;
 
 public class ServiceCenterLocation {
-	String address;
-	String landline;
-	String mobile;
+	private String address;
+	private String landline;
+	private String mobile;
 
 	private ServiceCenterLocation() {
 
@@ -16,5 +16,17 @@ public class ServiceCenterLocation {
 		serviceCenterLocation.landline = landline;
 		serviceCenterLocation.mobile = mobile;
 		return serviceCenterLocation;
+	}
+
+	public String getAddress() {
+		return address;
+	}
+
+	public String getLandline() {
+		return landline;
+	}
+
+	public String getMobile() {
+		return mobile;
 	}
 }

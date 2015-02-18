@@ -1,0 +1,17 @@
+<assembly>
+    <id>bundle</id> 
+    <formats>
+        <format>tar.gz</format>
+        <format>zip</format>
+    </formats>
+     <includeBaseDirectory>false</includeBaseDirectory>
+    <fileSets>       
+        <fileSet>
+	      <directory>servicefloor-main/target</directory>
+	      <outputDirectory>/servicefloor-main</outputDirectory>
+	      <includes>
+	        <include>./*.war</include>
+	      </includes>
+    	</fileSet>    	    	
+</fileSets>
+</assembly>

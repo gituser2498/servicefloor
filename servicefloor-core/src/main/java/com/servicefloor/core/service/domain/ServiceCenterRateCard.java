@@ -4,19 +4,20 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.servicefloor.core.service.dto.ServiceDto;
-import com.servicefloor.core.service.dto.ServiceSubCategoryDto;
+import com.servicefloor.core.service.dto.ServiceCenterRateCardCategoryDto;
 
 public class ServiceCenterRateCard {
 
-	List<ServiceSubCategory> serviceSubCategories;
-	List<Service> services;
+	private List<ServiceCenterRateCardCategory> serviceCenterRateCardCategories;
+	private List<Service> services;
 
 	private ServiceCenterRateCard() {
 
 	}
 
-	static ServiceCenterRateCard Create(List<ServiceDto> servicesDto,
-			List<ServiceSubCategoryDto> serviceSubCategoryDtoList) {
+	static ServiceCenterRateCard Create(
+			List<ServiceDto> servicesDto,
+			List<ServiceCenterRateCardCategoryDto> serviceCenterRateCardCatDtoList) {
 		ServiceCenterRateCard serviceCenterRateCard = new ServiceCenterRateCard();
 		List<Service> services = new ArrayList<Service>();
 		for (ServiceDto serviceDto : servicesDto) {
@@ -27,12 +28,25 @@ public class ServiceCenterRateCard {
 					serviceDto.getDiscountedPrice()));
 		}
 
-		List<ServiceSubCategory> serviceSubCategories = new ArrayList<ServiceSubCategory>();
-		for (ServiceSubCategoryDto serviceSubCategoryDto : serviceSubCategoryDtoList) {
-			serviceSubCategories.add(ServiceSubCategory.Create(
-					serviceSubCategoryDto.getServiceSubCategoryId(),
-					serviceSubCategoryDto.getServiceSubCategoryName()));
+		List<ServiceCenterRateCardCategory> serviceCenterRateCardCategories = new ArrayList<ServiceCenterRateCardCategory>();
+		for (ServiceCenterRateCardCategoryDto serviceCenterRateCardCategoryDto : serviceCenterRateCardCatDtoList) {
+			serviceCenterRateCardCategories
+					.add(ServiceCenterRateCardCategory.Create(
+							serviceCenterRateCardCategoryDto.getCategoryId(),
+							serviceCenterRateCardCategoryDto.getCategoryName()));
 		}
+
+		serviceCenterRateCard.services = services;
+		serviceCenterRateCard.serviceCenterRateCardCategories = serviceCenterRateCardCategories;
+
 		return serviceCenterRateCard;
+	}
+
+	public List<Service> getServices() {
+		return services;
+	}
+
+	public List<ServiceCenterRateCardCategory> getServiceCenterRateCardCategories() {
+		return serviceCenterRateCardCategories;
 	}
 }

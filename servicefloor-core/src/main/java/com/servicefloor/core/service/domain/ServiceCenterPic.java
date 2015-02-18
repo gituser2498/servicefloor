@@ -1,8 +1,8 @@
 package com.servicefloor.core.service.domain;
 
 public class ServiceCenterPic {
-	String mainPic;
-	String thumbnailPic;
+	private String mainPic;
+	private String thumbnailPic;
 
 	private ServiceCenterPic() {
 
@@ -13,5 +13,13 @@ public class ServiceCenterPic {
 		serviceCenterPic.mainPic = mainPic;
 		serviceCenterPic.thumbnailPic = thumbnailPic;
 		return serviceCenterPic;
+	}
+
+	public String getMainPic() {
+		return mainPic;
+	}
+
+	public String getThumbnailPic() {
+		return thumbnailPic;
 	}
 }
