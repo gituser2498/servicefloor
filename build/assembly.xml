@@ -7,8 +7,8 @@
      <includeBaseDirectory>false</includeBaseDirectory>
     <fileSets>       
         <fileSet>
-	      <directory>servicefloor-main/target</directory>
-	      <outputDirectory>/servicefloor-main</outputDirectory>
+	      <directory>user/target</directory>
+	      <outputDirectory>/user</outputDirectory>
 	      <includes>
 	        <include>./*.war</include>
 	      </includes>

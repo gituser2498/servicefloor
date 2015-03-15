@@ -13,8 +13,8 @@
 </properties>
 
 <modules>
-    <module>servicefloor-core</module> 
-    <module>servicefloor-main</module>           
+    <module>core</module> 
+    <module>user</module>           
 </modules>
 
 <build>
